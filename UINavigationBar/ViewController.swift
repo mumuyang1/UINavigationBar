@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var blueView: UIView!
+  
+  let padding: CGFloat = 20.0
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    blueView.translatesAutoresizingMaskIntoConstraints = false
+    blueView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: padding).isActive = true
+    blueView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding).isActive = true
+    blueView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding).isActive =  true
+    blueView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding).isActive = true
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-
 }
-
