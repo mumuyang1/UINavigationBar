@@ -17,6 +17,12 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationItem.title = "我是不是红色呀"
+    navigationController?.navigationBar.barTintColor = UIColor.red
+    addBlueView()
+  }
+  
+  func addBlueView() {
     blueView.translatesAutoresizingMaskIntoConstraints = false
     blueView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: padding).isActive = true
     blueView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding).isActive = true
