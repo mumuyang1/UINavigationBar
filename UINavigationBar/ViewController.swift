@@ -27,6 +27,17 @@ class ViewController: UIViewController {
     addBlueView()
   }
   
+  // modify statusbar style 1. set `View controller-based status bar appearance` to NO in info.plist
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    UIApplication.shared.statusBarStyle = .lightContent
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    UIApplication.shared.statusBarStyle = .default
+  }
+  
   func addBlueView() {
     blueView.translatesAutoresizingMaskIntoConstraints = false
     blueView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: padding).isActive = true
