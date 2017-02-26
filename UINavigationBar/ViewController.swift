@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     //set bar color
     navigationController?.navigationBar.barTintColor = UIColor.yellow
     
+//    navigationController?.navigationBar.isTranslucent = false
+    
     addBlueView()
   }
   
@@ -46,6 +48,15 @@ class ViewController: UIViewController {
     blueView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding).isActive = true
   }
 
+  override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+ 
+    coordinator.animate(alongsideTransition: { _ in
+        if newCollection.verticalSizeClass == .compact {
+          self.navigationController?.navigationBar.alpha = 0.0
+        }
+      })
+  }
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let item = UIBarButtonItem(title: "自定义", style: .plain, target: self, action: #selector(self.navigationController?.popViewController))
     
