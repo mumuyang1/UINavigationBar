@@ -17,9 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
-    // set bar item globally ?
-//    UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.classForCoder() as! UIAppearanceContainer.Type]).setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.green], for: .normal)
-   
+    // config globally
+    let barAppearance = UINavigationBar.appearance(whenContainedInInstancesOf: [UINavigationController.self])
+    barAppearance.barTintColor  = UIColor.gray  // bar color
+    barAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.green] // bar titie style
+    
+    UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.classForCoder() as! UIAppearanceContainer.Type]).setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.brown], for: .normal) // bar button item
+    
     return true
   }
 

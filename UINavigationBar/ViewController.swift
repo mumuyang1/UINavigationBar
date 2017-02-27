@@ -19,12 +19,12 @@ class ViewController: UIViewController {
    
     //set bar title and title color
     navigationItem.title = "我是不是红色呀"
-    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+//    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+//    
+//    //set bar color
+//    navigationController?.navigationBar.barTintColor = UIColor.yellow
     
-    //set bar color
-    navigationController?.navigationBar.barTintColor = UIColor.yellow
-    
-//    navigationController?.navigationBar.isTranslucent = false
+    navigationController?.navigationBar.isTranslucent = false
     
     addBlueView()
   }
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    let item = UIBarButtonItem(title: "自定义", style: .plain, target: self, action: #selector(self.navigationController?.popViewController))
+    let item = UIBarButtonItem(title: "自定义", style: .plain, target: self, action: #selector(self.navigationController?.pushViewController))
     
     item.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Helvetica-Bold", size: 23)!], for: .normal)
     
